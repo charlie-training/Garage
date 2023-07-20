@@ -19,4 +19,8 @@ public class Plane extends Vehicle {
         this.maxAltitude = maxAltitude;
 
     }
+    @Override
+    public String toString() {
+        return String.format("This is a plane with name %s and ID %d\n", this.getClass(), this.getVehID());
+    }
 }

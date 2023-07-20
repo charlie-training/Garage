@@ -11,4 +11,8 @@ public class Boat extends Vehicle {
         this.speed = speed;
         this.capacity = capacity;
     }
+    @Override
+    public String toString() {
+        return String.format("This is a boat with name %s and ID %d\n", this.getClass(), this.getVehID());
+    }
 }
