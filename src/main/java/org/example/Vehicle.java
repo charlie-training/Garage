@@ -3,10 +3,12 @@ package org.example;
 public abstract class Vehicle implements VehicleSpec {
 
     public boolean repairNeeded;
-    public float bill;
+    public int bill;
     private final int vehID;
 
-    public Vehicle(boolean repairNeeded, float bill) {
+    public String vehType;
+
+    public Vehicle(boolean repairNeeded, int bill) {
         this.repairNeeded = repairNeeded;
         this.bill = bill;
         Garage.vehicleListAdd(this);
@@ -21,8 +23,12 @@ public abstract class Vehicle implements VehicleSpec {
         return vehID;
     }
 
+    public String getVehType() {
+        return vehType;
+    }
+
     @Override
     public String toString() {
-        return String.format("Type: %s | ID %d\n", this.getClass().toString(), this.getVehID());
+        return String.format("Type: %s | ID %d\n", this.getClass().getSimpleName(), this.getVehID());
     }
 }

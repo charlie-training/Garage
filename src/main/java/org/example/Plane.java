@@ -10,17 +10,14 @@ public class Plane extends Vehicle {
 
     private float maxAltitude;
 
-
     public Plane(float speed, float weight, int capacity, float maxAltitude, boolean repairNeeded) {
         super(repairNeeded, 10000);
         this.speed = speed;
         this.weight = weight;
         this.capacity = capacity;
         this.maxAltitude = maxAltitude;
+        this.vehType = "Plane";
 
     }
-    @Override
-    public String toString() {
-        return String.format("This is a plane with name %s and ID %d\n", this.getClass(), this.getVehID());
-    }
+
 }

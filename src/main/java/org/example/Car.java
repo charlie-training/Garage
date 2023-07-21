@@ -14,6 +14,7 @@ public class Car extends Vehicle {
         this.speed = speed;
         this.wheels = wheels;
         this.fuel = fuel;
+        this.vehType = "Car";
     }
 
 }

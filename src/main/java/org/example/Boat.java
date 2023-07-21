@@ -10,9 +10,7 @@ public class Boat extends Vehicle {
         super(repairNeeded, 5000);
         this.speed = speed;
         this.capacity = capacity;
+        this.vehType = "Boat";
     }
-    @Override
-    public String toString() {
-        return String.format("This is a boat with name %s and ID %d\n", this.getClass(), this.getVehID());
-    }
+
 }

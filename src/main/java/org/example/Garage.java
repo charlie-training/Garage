@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class Garage {
     public static ArrayList<Vehicle> vehicleList = new ArrayList<>();
 
-    public static void billCalc(int ID) {
+    public static String billCalc(int ID) {
         for (Vehicle v: vehicleList) {
             if (v.getVehID() == ID) {
                 if (v.repairNeeded) {
-                    System.out.println("Vehicle repaired!\n Bill for " + v + " = " + v.bill);
                     v.repairVehicle();
+                    return String.format("Vehicle repaired!\n Bill for %s with ID %d = %d", v.getVehType(), ID, v.bill );
                 }
             }
-        }
+        } return "Vehicle with ID " + ID + " doesn't need repairing!";
     }
 
     public static void vehicleListAdd(Vehicle vehicle) {
@@ -40,23 +40,27 @@ public class Garage {
         System.out.println("Removed vehicle with ID: " + ID);
     }
 
-    public static ArrayList<Vehicle> getVehicleList() {
-        return vehicleList;
+    public static StringBuilder getVehicleList() {
+        StringBuilder toReturn = new StringBuilder();
+        for (Vehicle v: vehicleList) {
+            toReturn.append(v);
+        }
+        return toReturn;
     }
 
-    public static void removeVehicleByType(Class c) {
+    public static void removeVehicleByType(String c) {
         ArrayList<Vehicle> toRemove = new ArrayList<>();
         for (Vehicle v: vehicleList) {
-            if (v.getClass() == c) {
+            if (v.getVehType() == c) {
                 toRemove.add(v);
             }
         }
         vehicleList.removeAll(toRemove);
-        System.out.println("Removed all " + c + "'s!");
+        System.out.println("Removed all " + c + "s!");
     }
 
     public static void emptyVehicleList() {
-        removeVehicleByType(Vehicle.class);
-        System.out.println("Emptied list of vehicles!");
+        vehicleList.clear();
+        System.out.println("Emptied garage of vehicles!");
     }
 }
