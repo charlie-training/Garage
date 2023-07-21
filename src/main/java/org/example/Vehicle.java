@@ -1,5 +1,8 @@
 package org.example;
-
+/**
+ * Vehicle is an abstract class that is never instantiated, and instead defines some common
+ * attributes and methods for each of the car/boat/plane objects
+ */
 public abstract class Vehicle implements VehicleSpec {
 
     public boolean repairNeeded;

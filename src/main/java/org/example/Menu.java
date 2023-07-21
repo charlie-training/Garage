@@ -1,5 +1,8 @@
 package org.example;
-
+/**
+ * This class is called directly from main and forms the basis of the flow of the application.
+ * The options are printed for the user and the switch statement calls any of the correspinding functions
+ */
 public class Menu {
     public static void startMenu() {
         String homeScreen = """
@@ -37,7 +40,7 @@ public class Menu {
                 """;
         System.out.println(firstScreen);
         int userInput = Utility.inputScanInt();
-        Garage.getVehicleByID(userInput);
+        System.out.println(Garage.getVehicleByID(userInput));
         startMenu();
 
     }
@@ -62,7 +65,7 @@ public class Menu {
                 """;
         System.out.println(firstScreen + Garage.getVehicleList());
         int userInput = Utility.inputScanInt();
-        Garage.removeVehicleByID(userInput);
+        System.out.println(Garage.removeVehicleByID(userInput));
         startMenu();
     }
 

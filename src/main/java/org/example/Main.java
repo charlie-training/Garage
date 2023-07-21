@@ -1,5 +1,7 @@
 package org.example;
-
+/**
+ * Main simply instantiates a few objects and calls the startMenu() method from Menu to begin the application.
+ */
 public class Main {
     public static void main(String[] args) {
 

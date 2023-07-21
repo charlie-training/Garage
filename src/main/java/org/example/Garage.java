@@ -20,16 +20,16 @@ public class Garage {
         vehicleList.add(vehicle);
     }
 
-    public static void getVehicleByID(int ID) {
+    public static Object getVehicleByID(int ID) {
         for (Vehicle v: vehicleList) {
             if (v.getVehID() == ID) {
-                System.out.println(v);
+                return v;
             }
-        }
+        } return "Vehicle not found!";
     }
 
 
-    public static void removeVehicleByID(int ID) {
+    public static String removeVehicleByID(int ID) {
         ArrayList<Vehicle> toRemove = new ArrayList<>();
         for (Vehicle v: vehicleList) {
             if (v.getVehID() == ID) {
@@ -37,7 +37,7 @@ public class Garage {
             }
         }
         vehicleList.removeAll(toRemove);
-        System.out.println("Removed vehicle with ID: " + ID);
+        return "Removed vehicle with ID: " + ID;
     }
 
     public static StringBuilder getVehicleList() {
